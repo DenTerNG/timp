@@ -1,0 +1,3 @@
+/home/dt/DenTerNG/workspace/projects/timp/build/CMakeFiles/DivisibleBy5.dir
+/home/dt/DenTerNG/workspace/projects/timp/build/CMakeFiles/edit_cache.dir
+/home/dt/DenTerNG/workspace/projects/timp/build/CMakeFiles/rebuild_cache.dir
