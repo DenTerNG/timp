@@ -8,14 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
-      run: sudo apt-get install cmake g++
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake g++
     - name: Build
-      run: cmake . && make
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
     - name: Run tests
-      run: ./test
+      run: ./build/test

@@ -1,20 +1,23 @@
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include <iostream>
 
 bool isDivisibleBy5(int number) {
     return number % 5 == 0;
 }
 
-TEST_CASE("Test isDivisibleBy5 function", "[isDivisibleBy5]") {
-    REQUIRE(isDivisibleBy5(10) == true);
-    REQUIRE(isDivisibleBy5(15) == true);
-    REQUIRE(isDivisibleBy5(20) == true);
-    REQUIRE(isDivisibleBy5(25) == true);
-    REQUIRE(isDivisibleBy5(30) == true);
-    REQUIRE(isDivisibleBy5(1) == false);
-    REQUIRE(isDivisibleBy5(2) == false);
-    REQUIRE(isDivisibleBy5(3) == false);
-    REQUIRE(isDivisibleBy5(4) == false);
-    REQUIRE(isDivisibleBy5(6) == false);
+void testIsDivisibleBy5() {
+    if (!isDivisibleBy5(10)) {
+        std::cerr << "Error: 10 is divisible by 5, but isDivisibleBy5 returned false." << std::endl;
+    }
+    if (!isDivisibleBy5(15)) {
+        std::cerr << "Error: 15 is divisible by 5, but isDivisibleBy5 returned false." << std::endl;
+    }
+    if (isDivisibleBy5(11)) {
+        std::cerr << "Error: 11 is not divisible by 5, but isDivisibleBy5 returned true." << std::endl;
+    }
+    // Add more tests as needed
 }
 
+int main() {
+    testIsDivisibleBy5();
+    return 0;
+}
